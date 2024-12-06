@@ -254,38 +254,38 @@ This will set up your Dialogflow CX agent with the desired configuration and web
 
 Below is a sample test conversation scenario with the agent:
 
-User: Hi
-Agent Response: Welcome to our appointment booking system!
-Agent Response: Let's start by getting some details
-Agent Response: May I have your first name?
+- User: Hi
+- Agent Response: Welcome to our appointment booking system!
+- Agent Response: Let's start by getting some details
+- Agent Response: May I have your first name?
 
-User: new
-Agent Response: May I have your last name?
+- User: new
+- Agent Response: May I have your last name?
 
-User: user
-Agent Response: What is your date of birth?
+- User: user
+- Agent Response: What is your date of birth?
 
-User: 23 July 1998
-Agent Response: It seems you're a new patient. Let’s gather some additional details.
-Agent Response: Please provide your insurance policy number.
+- User: 23 July 1998
+- Agent Response: It seems you're a new patient. Let’s gather some additional details.
+- Agent Response: Please provide your insurance policy number.
 
-User: 123DFG
-Agent Response: Great! Let's validate your insurance policy number.
-Agent Response: What type of appointment would you like to schedule?
+- User: 123DFG
+- Agent Response: Great! Let's validate your insurance policy number.
+- Agent Response: What type of appointment would you like to schedule?
 
-User: consult
-Agent Response: At what time would you like to schedule your appointment?
+- User: consult
+- Agent Response: At what time would you like to schedule your appointment?
 
-User: 23 december 2023 2pm
-Agent Response: Appointment time must be in the future
-Agent Response: Please try again
-Agent Response: What type of appointment would you like to schedule?
+- User: 23 december 2023 2pm
+- Agent Response: Appointment time must be in the future
+- Agent Response: Please try again
+- Agent Response: What type of appointment would you like to schedule?
 
-User: consult
-Agent Response: At what time would you like to schedule your appointment?
+- User: consult
+- Agent Response: At what time would you like to schedule your appointment?
 
-User: 23 december 2024 2pm
-Agent Response: Your appointment has been created successfully
+- User: 23 december 2024 2pm
+- Agent Response: Your appointment has been created successfully
 
 ---
 
