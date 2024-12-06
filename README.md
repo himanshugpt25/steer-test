@@ -28,8 +28,8 @@ This project is a full-stack application designed to handle user creation, user 
 
 2. **Clone the repository:**
    ```bash
-   git clone https://github.com/himanshugpt25/steer-health.git
-   cd steer-health
+   https://github.com/himanshugpt25/steer-test.git
+   cd steer-test
    ```
 
 3. **Install dependencies:**
