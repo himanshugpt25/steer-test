@@ -15,7 +15,9 @@ This project is a full-stack application designed to handle user creation, user 
 4. [Whitelisting MongoDB IP for VPC](#whitelisting-mongodb-ip-for-vpc)  
 5. [Environment Variables](#environment-variables)  
 6. [Database Structure](#database-structure)  
-7. [API Routes and Parameters](#api-routes-and-parameters)  
+7. [API Routes and Parameters](#api-routes-and-parameters)
+8. [Dialogflow CX Agent Setup](#dialogflow-cx-agent-setup)  
+9. [Sample Test Conversation](#sample-test-conversation)  
 
 ---
 
@@ -216,7 +218,79 @@ This project relies on a MongoDB database with the following collections:
 
 ---
 
+### Dialogflow CX Agent Setup
+
+You can import the provided Dialogflow CX agent configuration (zip file) directly into your Dialogflow CX project:
+
+Create a Google Cloud project (if you don’t have one):
+
+Use the Google Cloud Console to create a new project.
+Enable Dialogflow CX:
+
+In the Cloud Console, go to APIs & Services > Library.
+Search for Dialogflow API and enable it.
+Create a Dialogflow CX Agent:
+
+Go to the Dialogflow CX Console.
+Select your project.
+Click Create Agent, provide details, and create.
+Import the Agent Configuration:
+
+After creating the agent, open the dropdown at the top to see the agent list.
+Go to the Agents list view.
+Click the options menu (three dots) to the right of the agent row.
+Select Restore.
+Choose the downloaded zip file.
+Confirm the restore operation to override the existing agent with the provided configuration.
+Update the Webhook Base URLs:
+
+After restoring, go to Manage > Webhooks in the Dialogflow CX Console.
+Update the base URLs of the webhooks to point to your deployed endpoint (e.g., your Cloud Function’s HTTPS trigger URL).
+This will set up your Dialogflow CX agent with the desired configuration and webhook connections to work with this application.
+
+---
+
+### Sample Test Conversation
+
+Below is a sample test conversation scenario with the agent:
+
+User: Hi
+Agent Response: Welcome to our appointment booking system!
+Agent Response: Let's start by getting some details
+Agent Response: May I have your first name?
+
+User: new
+Agent Response: May I have your last name?
+
+User: user
+Agent Response: What is your date of birth?
+
+User: 23 July 1998
+Agent Response: It seems you're a new patient. Let’s gather some additional details.
+Agent Response: Please provide your insurance policy number.
+
+User: 123DFG
+Agent Response: Great! Let's validate your insurance policy number.
+Agent Response: What type of appointment would you like to schedule?
+
+User: consult
+Agent Response: At what time would you like to schedule your appointment?
+
+User: 23 december 2023 2pm
+Agent Response: Appointment time must be in the future
+Agent Response: Please try again
+Agent Response: What type of appointment would you like to schedule?
+
+User: consult
+Agent Response: At what time would you like to schedule your appointment?
+
+User: 23 december 2024 2pm
+Agent Response: Your appointment has been created successfully
+
+---
+
 ### Notes
 
 - All API routes are triggered via HTTP POST and are designed to handle input provided by the Dialogflow webhook.
 - Ensure your VPC is correctly configured to allow secure access to the MongoDB database.
+- The agent also handles edge cases such as invalid dates and already booked appointments. Recognized appointment types include consult, follow-up, and check-up.
