@@ -222,31 +222,30 @@ This project relies on a MongoDB database with the following collections:
 
 You can import the provided Dialogflow CX agent configuration (zip file) directly into your Dialogflow CX project:
 
-Create a Google Cloud project (if you don’t have one):
+- Create a Google Cloud project (if you don’t have one):
 
-Use the Google Cloud Console to create a new project.
-Enable Dialogflow CX:
+- Use the Google Cloud Console to create a new project.
+**Enable Dialogflow CX:**
+- In the Cloud Console, go to APIs & Services > Library.
+- Search for Dialogflow API and enable it.
 
-In the Cloud Console, go to APIs & Services > Library.
-Search for Dialogflow API and enable it.
-Create a Dialogflow CX Agent:
+**Create a Dialogflow CX Agent:**
+- Go to the Dialogflow CX Console.
+- Select your project.
+- Click Create Agent, provide details, and create.
+  
+**Import the Agent Configuration:**
+- After creating the agent, open the dropdown at the top to see the agent list.
+- Go to the Agents list view.
+- Click the options menu (three dots) to the right of the agent row.
+- Select Restore.
+- Choose the downloaded zip file.
+- Confirm the restore operation to override the existing agent with the provided configuration.
 
-Go to the Dialogflow CX Console.
-Select your project.
-Click Create Agent, provide details, and create.
-Import the Agent Configuration:
-
-After creating the agent, open the dropdown at the top to see the agent list.
-Go to the Agents list view.
-Click the options menu (three dots) to the right of the agent row.
-Select Restore.
-Choose the downloaded zip file.
-Confirm the restore operation to override the existing agent with the provided configuration.
-Update the Webhook Base URLs:
-
-After restoring, go to Manage > Webhooks in the Dialogflow CX Console.
-Update the base URLs of the webhooks to point to your deployed endpoint (e.g., your Cloud Function’s HTTPS trigger URL).
-This will set up your Dialogflow CX agent with the desired configuration and webhook connections to work with this application.
+**Update the Webhook Base URLs:**
+- After restoring, go to Manage > Webhooks in the Dialogflow CX Console.
+- Update the base URLs of the webhooks to point to your deployed endpoint (e.g., your Cloud Function’s HTTPS trigger URL).
+- This will set up your Dialogflow CX agent with the desired configuration and webhook connections to work with this application.
 
 ---
 
